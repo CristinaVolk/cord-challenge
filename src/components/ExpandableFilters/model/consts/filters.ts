@@ -1,0 +1,1 @@
+export const languagesAvailable = ['en', 'fr', 'es', 'ko']

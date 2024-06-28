@@ -1,0 +1,39 @@
+@import "../../../shared/styles/mixins/flexbox.scss";
+
+.ExpandableFilters {
+  background: white;
+  margin-top: 15px;
+  padding: 15px;
+
+  h5 {
+    font-weight: bold;
+    color: var(--secondary-text-color);
+  }
+
+  .checkbox {
+    width: 16px;
+    border: 1px solid;
+    border-radius: 4px;
+    fill: none;
+    color: var(--fontColor);
+
+    &.checked {
+      fill: var(--fontColor);
+    }
+
+    & + h5 {
+      font-weight: 200;
+    }
+  }
+}
+
+.ExpandableFiltersMobile {
+  div[role='menu'] {
+    position: fixed;
+    inset: 110px 0 0 0;
+    width: 18rem;
+    max-width: 100vw;
+    max-height: 100dvh;
+    margin: auto;
+  }
+}

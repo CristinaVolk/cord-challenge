@@ -1,0 +1,57 @@
+@import "../../shared/styles/mixins/flexbox";
+
+.SideBar {
+  background: var(--sideNavBar);
+  padding: 0;
+
+  .trigger {
+    padding: 35px 35px 15px;
+
+
+    & > h1 {
+      color: var(--lightBackground);
+    }
+
+    &:hover {
+      background: var(--sideNavBarHover);
+    }
+
+    .triggerIcon {
+      transform: rotate(0deg);
+
+      &.collapsed {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  div[role='menu'] {
+    margin: 0 0 35px 35px;
+  }
+
+  div[role='menuitem'] {
+    padding: 5px 0;
+  }
+}
+
+.SideBarItem {
+  width: 100%;
+  padding: 5px 35px 10px 35px;
+  @include flexbox($gap: 5px, $justifyContent: space-between);
+
+  & > h3 {
+    color: var(--lightBackground);
+  }
+
+  &.active {
+      background-color: var(--primaryColor);
+  }
+}
+
+.subitem {
+  padding: 15px 35px 0 35px;
+}
+.subitem > h3 {
+  color: var(--fontColor);
+}
+

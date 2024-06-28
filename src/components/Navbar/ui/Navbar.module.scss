@@ -1,0 +1,11 @@
+.Navbar {
+  position: sticky;
+
+  button {
+    display: flex;
+  }
+
+  h3 {
+    color: var(--secondary-text-color);
+  }
+}

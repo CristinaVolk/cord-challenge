@@ -1,0 +1,36 @@
+.FiltersListBox {
+  .trigger {
+    border: none;
+    background: transparent;
+    margin-bottom: 10px;
+
+    .title {
+      font-weight: bold;
+      color: var(--sideNavBar);
+
+      &::before {
+        content: ' + ';
+        position: relative;
+        top: 2px;
+        font-weight: 100;
+        font-size: 1.5rem;
+      }
+
+      &.collapsed::before {
+        content: ' - ';
+      }
+    }
+  }
+
+    .list {
+      &.open {
+        animation: fade-in 600ms linear;
+      }
+    }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
