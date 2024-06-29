@@ -1,4 +1,4 @@
-import {MoviesList} from "../../../entities/MoviesList/ui/MoviesList";
+import {MoviesList} from "../../../entities/MoviesList";
 
 export const DiscoverPage = () => {
     return (

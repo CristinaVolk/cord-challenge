@@ -2,14 +2,16 @@ import {useLocation} from "react-router-dom";
 import {useMemo, useState} from "react";
 
 import {classNames} from "../../../shared/helpers/classNames";
-import classes from "./Navbar.module.scss";
-
-import {Dropdown} from "../../../shared/UI/Dropdown/Dropdown";
-import {Icon} from "../../../shared/UI/Icon/Icon";
-import {getSideBarItems} from "../../SideBar/model/selectors/getSideBarItem";
-import {SideBarItem} from "../../SideBar/SideBarItem";
 import {AppRouterByPathPattern} from "../../../shared/consts/router";
 import {HStack} from "../../../shared/UI/Stack";
+import {Dropdown} from "../../../shared/UI/Dropdown/Dropdown";
+import {Icon} from "../../../shared/UI/Icon/Icon";
+
+import {getSideBarItems} from "../../SideBar";
+import {SideBarItem} from "../../SideBar";
+
+import classes from "./Navbar.module.scss";
+
 
 export const Navbar = () => {
     const location = useLocation()

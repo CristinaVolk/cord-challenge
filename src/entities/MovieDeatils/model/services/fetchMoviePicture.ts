@@ -18,8 +18,7 @@ export const fetchMoviePicture = createAsyncThunk<
                 await (extra as ThunkExtraArg).imageApi!.get(`/w500${poster_path}`);
 
             return response.data;
-
         } catch (e) {
-            return rejectWithValue("Error while fetching movie picture");
+            return rejectWithValue("The movie picture failed to load");
         }
     });

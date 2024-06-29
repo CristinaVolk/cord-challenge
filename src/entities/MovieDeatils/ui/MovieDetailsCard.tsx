@@ -3,12 +3,22 @@ import {useSelector} from "react-redux";
 import {BrowserView, MobileView} from "react-device-detect";
 
 import {MovieDetails} from "../model/types/MovieDetails";
-import classes from "./MovieDetails.module.scss";
-import {getExpandableFiltersGenres} from "../../../features/ExpandableFilters/model/selectors/getExpandableFilters";
-import {HStack, VStack} from "../../../shared/UI/Stack";
-import {getMoviesDetailsPicture} from "../model/selectors/getMovieDetailsSelector";
-import {useAppDispatch} from "../../../shared/hooks/useAppDispatch/useAppDispatch";
 import {fetchMoviePicture} from "../model/services/fetchMoviePicture";
+
+import classes from "./MovieDetails.module.scss";
+
+import {getExpandableFiltersGenres} from "../../../features/ExpandableFilters";
+
+import {HStack, VStack} from "../../../shared/UI/Stack";
+import {useAppDispatch} from "../../../shared/hooks/useAppDispatch/useAppDispatch";
+
+import {
+    getMoviesDetailsError,
+    getMoviesDetailsLoading,
+    getMoviesDetailsPicture
+} from "../model/selectors/getMovieDetailsSelector";
+
+
 
 interface MovieDetailsCardProps {
     movie: MovieDetails
@@ -23,7 +33,10 @@ export const MovieDetailsCard = (props: MovieDetailsCardProps) => {
         release_date,
     } = movie
 
+    const error = useSelector(getMoviesDetailsError)
+    const isLoading = useSelector(getMoviesDetailsLoading)
     const picturePath = useSelector(getMoviesDetailsPicture)
+
     const genres = useSelector(getExpandableFiltersGenres)
     const dispatch = useAppDispatch();
 
@@ -36,7 +49,11 @@ export const MovieDetailsCard = (props: MovieDetailsCardProps) => {
         <>
             <BrowserView className={classes.fullWidth}>
                 <HStack max gap='20' align='start' className={classes.MovieDetails}>
+
+                    {isLoading && <p>Loading ...</p>}
+                    {error && <p>{error}</p>}
                     {picturePath && <img src={picturePath} alt="movie picture"/>}
+
                     <VStack gap='20'>
                         <h2 className={classes.title}>{title}</h2>
                         <h5 className={classes.genres}>{

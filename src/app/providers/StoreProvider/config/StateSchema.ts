@@ -1,7 +1,8 @@
 import {AxiosInstance} from "axios";
-import {MovieDetailsSchema} from "../../../../entities/MovieDeatils/model/types/MovieDetails";
-import {MoviesListSchema} from "../../../../entities/MoviesList/model/types/MoviesList";
-import {ExpandableFiltersSchema} from "../../../../features/ExpandableFilters/model/types/ExpandableFiltersSchema";
+
+import {MoviesListSchema} from "../../../../entities/MoviesList";
+import {ExpandableFiltersSchema} from "../../../../features/ExpandableFilters";
+import {MovieDetailsSchema} from "../../../../entities/MovieDeatils";
 
 
 export interface StateSchema {

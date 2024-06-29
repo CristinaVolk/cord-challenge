@@ -1,6 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+
 import {MoviesListSchema} from "../types/MoviesList";
-import {MovieDetails} from "../../../MovieDeatils/model/types/MovieDetails";
+import {MovieDetails} from "../../../MovieDeatils";
 import {fetchMovies} from "../services/fetchMovies";
 
 const initialState: MoviesListSchema = {

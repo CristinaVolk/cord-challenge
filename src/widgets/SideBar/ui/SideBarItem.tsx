@@ -1,8 +1,11 @@
-import {Icon} from "../../shared/UI/Icon/Icon";
-import {classNames} from "../../shared/helpers/classNames";
-import classes from "./SideBar.module.scss";
-import {SideBarItemType} from "./model/selectors/getSideBarItem";
 import {Link} from "react-router-dom";
+
+import {Icon} from "../../../shared/UI/Icon/Icon";
+import {classNames} from "../../../shared/helpers/classNames";
+
+import {SideBarItemType} from "../model/selectors/getSideBarItem";
+
+import classes from "./SideBar.module.scss";
 
 interface SideBarItemProps {
     className?: string

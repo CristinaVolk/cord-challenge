@@ -14,9 +14,7 @@ export const StoreProvider = (props: StoreProviderProps) => {
 
     const store = useMemo(
         () =>
-            createReduxStore(
-                initialState as StateSchema,
-            ),
+            createReduxStore(initialState),
         [initialState],
     );
 

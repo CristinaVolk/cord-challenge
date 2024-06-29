@@ -1,21 +1,33 @@
 import React, {useCallback, useEffect} from "react";
-import {getMoviesListMovies, getMoviesListSearch, getMoviesListYear} from "../model/selectors/getMoviesListSelector";
 import {useSelector} from "react-redux";
+
+import {
+    getMoviesListError, getMoviesListLoading,
+    getMoviesListMovies,
+    getMoviesListSearch,
+    getMoviesListYear
+} from "../model/selectors/getMoviesListSelector";
 import {fetchMovies} from "../model/services/fetchMovies";
-import {MovieDetailsCard} from "../../MovieDeatils/ui/MovieDetailsCard";
-import {MovieDetails} from "../../MovieDeatils/model/types/MovieDetails";
-import {getExpandableFiltersSelected} from "../../../features/ExpandableFilters/model/selectors/getExpandableFilters";
+
+import {MovieDetailsCard} from "../../MovieDeatils";
+import {MovieDetails} from "../../MovieDeatils";
+
+import {getExpandableFiltersSelected} from "../../../features/ExpandableFilters";
+
 import {useAppDispatch} from "../../../shared/hooks/useAppDispatch/useAppDispatch";
 import {useDebounce} from "../../../shared/hooks/useDebounce/useDebounce";
 import {VStack} from "../../../shared/UI/Stack";
+import {Error} from '../../../shared/UI/Error/ui/Error'
 
 
 export const MoviesList = () => {
     const searchTerm = useSelector(getMoviesListSearch)
     const year = useSelector(getMoviesListYear)
     const movies = useSelector(getMoviesListMovies)
-    const dispatch = useAppDispatch();
     const selectedFilters = useSelector(getExpandableFiltersSelected)
+    const error = useSelector(getMoviesListError);
+    const isLoading = useSelector(getMoviesListLoading);
+    const dispatch = useAppDispatch();
 
     const fetchData = useCallback(() => {
         // @ts-ignore
@@ -60,16 +72,23 @@ export const MoviesList = () => {
                 <MovieDetailsCard movie={movie} key={movie.id} />
             ))
 
+    if (isLoading) {
+        return <h1>Loading ...</h1>
+    }
+
+    if (movies.length) {
+        return (
+            <VStack gap='15'>
+                {content}
+            </VStack>
+        )
+    }
 
     return (
-        <VStack gap='15'>
-            {movies.length
-                ? content
-                : <h1>
-                    No movies found...
-                    Try typing in the search box
-                  </h1>
-            }
-        </VStack>
+         <h1>
+             No movies found...
+             Try typing in the search box
+             {error && <Error message={error}></Error>}
+         </h1>
     )
 }

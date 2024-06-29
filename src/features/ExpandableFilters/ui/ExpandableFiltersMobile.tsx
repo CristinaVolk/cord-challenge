@@ -2,6 +2,7 @@ import {useState} from "react";
 import {Dropdown} from "../../../shared/UI/Dropdown/Dropdown";
 import {useExpandableFilters} from "../model/hooks/useExpandableFilters";
 import {Icon} from "../../../shared/UI/Icon/Icon";
+
 import classes from "./ExpandableFilters.module.scss";
 
 export const ExpandableFiltersMobile = () => {

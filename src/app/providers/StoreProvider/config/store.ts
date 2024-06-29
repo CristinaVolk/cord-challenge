@@ -1,12 +1,15 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { $mainApi, $imageApi } from '../../../../shared/api/api';
+
 import {
     StateSchema,
     ThunkExtraArg,
 } from './StateSchema';
-import {moviesListReducer} from "../../../../entities/MoviesList/model/slices/moviesListSlice";
-import {movieDetailsReducer} from "../../../../entities/MovieDeatils/model/slices/movieDetailsSlice";
-import {expandableFiltersReducer} from "../../../../features/ExpandableFilters/model/slices/expandableFiltersSlice";
+
+import {moviesListReducer} from "../../../../entities/MoviesList";
+import {movieDetailsReducer} from "../../../../entities/MovieDeatils";
+import {expandableFiltersReducer} from "../../../../features/ExpandableFilters";
+import { $mainApi, $imageApi } from '../../../../shared/api/api';
+
 
 export function createReduxStore(
     initialState?: StateSchema,

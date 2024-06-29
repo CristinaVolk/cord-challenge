@@ -1,15 +1,18 @@
 import {useMemo, useState} from "react";
 import {Link} from "react-router-dom";
 
-import {classNames} from "../../shared/helpers/classNames";
+import {SideBarItem} from "./SideBarItem";
+
+import {getSideBarItems} from "../model/selectors/getSideBarItem";
+
+import {classNames} from "../../../shared/helpers/classNames";
+import {Dropdown} from "../../../shared/UI/Dropdown/Dropdown";
+import {Icon} from "../../../shared/UI/Icon/Icon";
+import {HStack} from "../../../shared/UI/Stack";
+import {getRouteHome} from "../../../shared/consts/router";
+
 import classes from "./SideBar.module.scss";
 
-import {SideBarItem} from "./SideBarItem";
-import {getSideBarItems} from "./model/selectors/getSideBarItem";
-import {Dropdown} from "../../shared/UI/Dropdown/Dropdown";
-import {Icon} from "../../shared/UI/Icon/Icon";
-import {HStack} from "../../shared/UI/Stack";
-import {getRouteHome} from "../../shared/consts/router";
 
 interface SideBarProps {
     className?: string | undefined

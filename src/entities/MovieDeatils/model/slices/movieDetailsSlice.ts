@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 import {MovieDetailsSchema} from "../types/MovieDetails";
 import {fetchMoviePicture} from "../services/fetchMoviePicture";
 
@@ -20,7 +20,7 @@ const movieDetailsSlice = createSlice({
                 state.isLoading = true;
             })
             .addCase(fetchMoviePicture.rejected, (state, action) => {
-                state.error = action.payload as string;
+                state.error = action.payload!;
                 state.isLoading = false;
             })
             .addCase(fetchMoviePicture.fulfilled, (state, action) => {

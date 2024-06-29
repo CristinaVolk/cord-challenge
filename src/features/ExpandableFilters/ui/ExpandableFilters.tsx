@@ -17,8 +17,8 @@ import {Error} from "../../../shared/UI/Error/ui/Error";
 
 export const ExpandableFilters = () => {
     const isLoading = useSelector(getExpandableFiltersLoading)
-    const dispatch = useAppDispatch()
     const error = useSelector(getExpandableFiltersError)
+    const dispatch = useAppDispatch()
 
     useEffect(()=> {
         // @ts-ignore

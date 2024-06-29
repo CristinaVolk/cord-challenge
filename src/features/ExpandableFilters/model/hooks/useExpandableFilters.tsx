@@ -1,5 +1,6 @@
 import {useSelector} from "react-redux";
 import {
+    getExpandableFiltersError,
     getExpandableFiltersGenres,
     getExpandableFiltersLangs,
     getExpandableFiltersSelected
@@ -85,10 +86,10 @@ export const useExpandableFilters = () => {
     ]
 
     return {
-        genresFilters,
-        genreItems,
-        langsFilters,
         langItems,
-        filterItems
+        genreItems,
+        filterItems,
+        langsFilters,
+        genresFilters,
     }
 }

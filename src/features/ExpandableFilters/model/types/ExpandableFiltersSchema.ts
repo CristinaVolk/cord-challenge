@@ -8,7 +8,6 @@ export interface Language {
     english_name: string,
     name: string
 }
-export type FiltersType = 'genres' | 'langs'
 
 export interface ExpandableFiltersSchema {
     genreFilters: Array<Genre>

@@ -2,7 +2,7 @@ import {AxiosResponse} from "axios";
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {getMoviesListSearch, getMoviesListYear} from "../selectors/getMoviesListSelector";
 import {GetMovieListResponse} from "../types/MoviesList";
-import {MovieDetails} from "../../../MovieDeatils/model/types/MovieDetails";
+import {MovieDetails} from "../../../MovieDeatils";
 import {$searchMovies} from "../../../../shared/api/endpoints";
 import {StateSchema, ThunkConfig, ThunkExtraArg} from "../../../../app/providers/StoreProvider/config/StateSchema";
 

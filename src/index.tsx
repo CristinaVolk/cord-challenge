@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {RouterProvider} from "react-router-dom";
 
-import {App} from './app/ui/App';
-import {StoreProvider} from "./app/providers/StoreProvider/ui/StoreProvider";
-import {ErrorBoundary} from "./app/providers/ErrorBoundary/ui/ErrorBoundary";
+import {StoreProvider} from "./app/providers/StoreProvider";
+import {ErrorBoundary} from "./app/providers/ErrorBoundary";
+import {appRouter} from "./app/providers/Router";
+
 import './app/styles/index.scss';
 
 const root: ReactDOM.Root = ReactDOM.createRoot(
@@ -12,7 +14,7 @@ const root: ReactDOM.Root = ReactDOM.createRoot(
 root.render(
     <StoreProvider>
         <ErrorBoundary>
-            <App />
+            <RouterProvider router={appRouter} />
         </ErrorBoundary>
     </StoreProvider>
 );

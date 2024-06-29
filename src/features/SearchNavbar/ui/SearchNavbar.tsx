@@ -1,27 +1,43 @@
-import {ChangeEvent} from "react";
+import {ChangeEvent, useEffect} from "react";
 import {useSelector} from "react-redux";
+import {BrowserView, MobileView} from "react-device-detect";
+
 import {useAppDispatch} from "../../../shared/hooks/useAppDispatch/useAppDispatch";
 import {Icon} from "../../../shared/UI/Icon/Icon";
 import {HStack, VStack} from "../../../shared/UI/Stack";
+import {getRouteDiscover} from "../../../shared/consts/router";
+import {useIsOnPage} from "../../../shared/hooks/useIsOnPage/useIsOnPage";
+
 import classes from "./SearchNavbar.module.scss";
-import {BrowserView, MobileView} from "react-device-detect";
-import {moviesListActions} from "../../../entities/MoviesList/model/slices/moviesListSlice";
+
+import {moviesListActions} from "../../../entities/MoviesList";
 import {
     getMoviesListSearch,
     getMoviesListYear
-} from "../../../entities/MoviesList/model/selectors/getMoviesListSelector";
+} from "../../../entities/MoviesList";
+
 
 export const SearchNavbar = () => {
     const searchTerm = useSelector(getMoviesListSearch)
     const movieYear = useSelector(getMoviesListYear)
     const dispatch = useAppDispatch();
+    const shouldInputBeDisabled = !useIsOnPage(getRouteDiscover())
+
+    useEffect(() => {
+        clearInputs()
+    }, [shouldInputBeDisabled])
 
     function onSearchTermChange(event: ChangeEvent<HTMLInputElement>) {
         dispatch(moviesListActions.setSearch(event.target.value))
     }
 
-    function onCalendarYearChange(event: any) {
+    function onCalendarYearChange(event: ChangeEvent<HTMLInputElement>) {
         dispatch(moviesListActions.setYear(event.target.value))
+    }
+
+    function clearInputs() {
+        dispatch(moviesListActions.setSearch(''))
+        dispatch(moviesListActions.setYear(''))
     }
 
     return (
@@ -33,6 +49,7 @@ export const SearchNavbar = () => {
                         <input
                             value={searchTerm}
                             onChange={onSearchTermChange}
+                            disabled={shouldInputBeDisabled}
                         />
                     </HStack>
 
@@ -42,6 +59,7 @@ export const SearchNavbar = () => {
                             value={movieYear}
                             onChange={onCalendarYearChange}
                             placeholder="Year of release"
+                            disabled={shouldInputBeDisabled}
                         />
                     </HStack>
                 </VStack>
@@ -52,6 +70,7 @@ export const SearchNavbar = () => {
                     <input
                         value={searchTerm}
                         onChange={onSearchTermChange}
+                        disabled={shouldInputBeDisabled}
                     />
                 </HStack>
             </MobileView>

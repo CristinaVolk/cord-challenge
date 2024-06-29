@@ -1,4 +1,4 @@
-import {MovieDetails} from "../../../MovieDeatils/model/types/MovieDetails";
+import {MovieDetails} from "../../../MovieDeatils";
 
 export interface MoviesListSchema {
     search: string | undefined,
