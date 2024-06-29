@@ -1,3 +1,5 @@
+import {AppRoutes, getRouteDiscover, getRouteSaved, getRouteWatched} from "../../../../shared/consts/router";
+
 export type SideBarItemType = {
     label: string,
     iconPath?: string
@@ -8,22 +10,22 @@ export type SideBarItemType = {
 export function getSideBarItems (): Array<SideBarItemType> {
     return [
         {
-            label: "Discover",
+            label: AppRoutes.DISCOVER,
             iconPath: 'assets/icons/search-icon-yellow.png',
             iconAlt: 'search-icon',
-            path: '/discover'
+            path: getRouteDiscover()
         },
         {
-            label: "Watched",
-            path: '/watched',
+            label: AppRoutes.WATCHED,
+            path: getRouteWatched(),
             subitems: [
                 {label: 'Movies', path: '/watched/movies' },
                 {label: "TV Shows", path: '/watched/shows'}
             ]
         },
         {
-            label: "Saved",
-            path: '/saved',
+            label: AppRoutes.SAVED,
+            path: getRouteSaved(),
             subitems: [
                 {label: 'Movies', path: '/saved/movies'},
                 {label: "TV Shows", path: '/saved/shows'}

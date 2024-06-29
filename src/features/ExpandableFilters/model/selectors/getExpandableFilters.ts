@@ -1,4 +1,4 @@
-import {StateSchema} from "../../../../app/providers/storeProvider/config/StateSchema";
+import {StateSchema} from "../../../../app/providers/StoreProvider/config/StateSchema";
 
 export const getExpandableFiltersLoading = (state: StateSchema) => state.expandableFilters.isLoading;
 export const getExpandableFiltersError = (state: StateSchema) => state.expandableFilters.error || '';

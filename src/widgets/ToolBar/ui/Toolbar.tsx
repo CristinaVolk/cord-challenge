@@ -1,24 +1,14 @@
-import {BrowserView, MobileView} from "react-device-detect";
+import {isMobile} from "react-device-detect";
 import {SearchNavbar} from "../../../features/SearchNavbar/ui/SearchNavbar";
-import {ExpandableFilters} from "../../ExpandableFilters/ui/ExpandableFilters";
-import {HStack} from "../../../shared/UI/Stack";
-
+import {ExpandableFilters} from "../../../features/ExpandableFilters/ui/ExpandableFilters";
+import {classNames} from "../../../shared/helpers/classNames";
+import classes from './Toolbar.module.scss'
 
 export const Toolbar = () => {
-
     return (
-        <>
-            <BrowserView>
+        <div className={classNames(classes.Toolbar, {[classes.mobile]: isMobile}, [])}>
                 <SearchNavbar />
                 <ExpandableFilters />
-            </BrowserView>
-
-            <MobileView>
-                <HStack>
-                    <SearchNavbar />
-                    <ExpandableFilters />
-                </HStack>
-            </MobileView>
-        </>
+        </div>
     )
 }

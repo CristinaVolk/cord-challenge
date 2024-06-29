@@ -1,4 +1,4 @@
-import {StateSchema} from "../../../../app/providers/storeProvider/config/StateSchema";
+import {StateSchema} from "../../../../app/providers/StoreProvider/config/StateSchema";
 
 
 export const getMoviesDetailsLoading = (state: StateSchema) => state.movieDetails.isLoading;

@@ -16,7 +16,7 @@ interface MovieDetailsCardProps {
 export const MovieDetailsCard = (props: MovieDetailsCardProps) => {
     const {movie} = props
     const {
-        backdrop_path,
+        poster_path,
         genre_ids,
         title,
         overview,
@@ -28,7 +28,8 @@ export const MovieDetailsCard = (props: MovieDetailsCardProps) => {
     const dispatch = useAppDispatch();
 
     useEffect(()=> {
-        dispatch(fetchMoviePicture(backdrop_path))
+        // @ts-ignore
+        dispatch(fetchMoviePicture(poster_path))
     }, [dispatch])
 
     return (

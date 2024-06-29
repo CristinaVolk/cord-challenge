@@ -4,7 +4,7 @@ import {getMoviesListSearch, getMoviesListYear} from "../selectors/getMoviesList
 import {GetMovieListResponse} from "../types/MoviesList";
 import {MovieDetails} from "../../../MovieDeatils/model/types/MovieDetails";
 import {$searchMovies} from "../../../../shared/api/endpoints";
-import {StateSchema, ThunkConfig, ThunkExtraArg} from "../../../../app/providers/storeProvider/config/StateSchema";
+import {StateSchema, ThunkConfig, ThunkExtraArg} from "../../../../app/providers/StoreProvider/config/StateSchema";
 
 
 export const fetchMovies = createAsyncThunk<

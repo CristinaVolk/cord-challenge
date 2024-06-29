@@ -1,7 +1,7 @@
 import {Checkbox} from "@headlessui/react";
 import {CheckIcon} from "@heroicons/react/16/solid";
 import {classNames} from "../../../helpers/classNames";
-import classes from "../../../../components/ExpandableFilters/ui/ExpandableFilters.module.scss";
+import classes from "./CheckBoxItem.module.scss";
 import {HStack} from "../../Stack";
 
 interface CheckBoxItemProps {

@@ -1,29 +1,14 @@
-@import "../../../shared/styles/mixins/flexbox.scss";
+@import "../../../app/styles/mixins/flexbox.scss";
 
 .ExpandableFilters {
   background: white;
   margin-top: 15px;
   padding: 15px;
+  box-shadow: var(--shadow-soft);
 
   h5 {
     font-weight: bold;
     color: var(--secondary-text-color);
-  }
-
-  .checkbox {
-    width: 16px;
-    border: 1px solid;
-    border-radius: 4px;
-    fill: none;
-    color: var(--fontColor);
-
-    &.checked {
-      fill: var(--fontColor);
-    }
-
-    & + h5 {
-      font-weight: 200;
-    }
   }
 }
 

@@ -3,22 +3,24 @@ import {DiscoverPage} from "../../../pages/Discover/ui/DiscoverPage";
 import {Layout} from "../../../layouts/Layout/Layout";
 import {WatchedPage} from "../../../pages/Watched/ui/WatchedPage";
 import {SavedPage} from "../../../pages/Saved/ui/SavedPage";
+import {getRouteDiscover, getRouteHome, getRouteSaved, getRouteWatched} from "../../../shared/consts/router";
+
 
 export const appRouter = createBrowserRouter([
     {
-        path: "/",
+        path: getRouteHome(),
         Component: Layout,
         children: [
             {
-                path: "/discover",
+                path: getRouteDiscover(),
                 Component: DiscoverPage,
             },
             {
-                path: "/watched",
+                path: getRouteWatched(),
                 Component: WatchedPage,
             },
             {
-                path: "/saved",
+                path: getRouteSaved(),
                 Component: SavedPage,
             },
         ],

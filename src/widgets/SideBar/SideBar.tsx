@@ -6,6 +6,7 @@ import {getSideBarItems} from "./model/selectors/getSideBarItem";
 import {Dropdown} from "../../shared/UI/Dropdown/Dropdown";
 import {Icon} from "../../shared/UI/Icon/Icon";
 import {HStack} from "../../shared/UI/Stack";
+import {Link} from "react-router-dom";
 
 interface SideBarProps {
     className?: string | undefined
@@ -56,7 +57,7 @@ export function SideBar(props: SideBarProps) {
                             justify='between'
                             className={classes.trigger}
                         >
-                            <h1>Wesley</h1>
+                            <Link to={'/'}><h1>Wesley</h1></Link>
                             <Icon
                                 width={24}
                                 height={16}

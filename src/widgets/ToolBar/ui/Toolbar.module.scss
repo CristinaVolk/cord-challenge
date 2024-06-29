@@ -1,0 +1,10 @@
+.Toolbar {
+  display: flex;
+  flex-direction: column;
+
+  &.mobile {
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 25px;
+  }
+}

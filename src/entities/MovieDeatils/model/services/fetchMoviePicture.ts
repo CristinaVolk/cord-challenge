@@ -1,7 +1,7 @@
 import {AxiosResponse} from "axios";
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
-import {ThunkConfig, ThunkExtraArg} from "../../../../app/providers/storeProvider/config/StateSchema";
+import {ThunkConfig, ThunkExtraArg} from "../../../../app/providers/StoreProvider/config/StateSchema";
 
 
 export const fetchMoviePicture = createAsyncThunk<
@@ -10,12 +10,12 @@ export const fetchMoviePicture = createAsyncThunk<
     ThunkConfig<string>
 >(
     'movieDetails/fetchMoviePicture',
-    async (backdropPath: string, thunkAPI) => {
+    async (poster_path: string, thunkAPI) => {
         const { extra, rejectWithValue } = thunkAPI;
 
         try {
             const response: AxiosResponse<any> =
-                await (extra as ThunkExtraArg).imageApi!.get(`/w500/${backdropPath}`);
+                await (extra as ThunkExtraArg).imageApi!.get(`/w500${poster_path}`);
 
             return response.data;
 

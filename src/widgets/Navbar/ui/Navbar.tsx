@@ -5,8 +5,13 @@ import {useMemo, useState} from "react";
 import {SideBarItem} from "../../SideBar/SideBarItem";
 import {classNames} from "../../../shared/helpers/classNames";
 import classes from "./Navbar.module.scss";
+import {useLocation, useParams} from "react-router-dom";
+import {AppRouterByPathPattern} from "../../../shared/consts/router";
+import {HStack} from "../../../shared/UI/Stack";
 
 export const Navbar = () => {
+    const location = useLocation()
+    const pageTitle = AppRouterByPathPattern[location.pathname];
     const trigger = (
         <Icon
             width='32px'
@@ -15,9 +20,7 @@ export const Navbar = () => {
             alt='hamburger menu icon'
         />
     )
-    // const [customOpen, setCustomOpen] = useState(false);
     const sideBarItemsList = getSideBarItems()
-
     const [customOpen, setCustomOpen] = useState(false);
 
     const onToggle = () => {
@@ -48,7 +51,7 @@ export const Navbar = () => {
 
 
     return (
-        <nav className={classNames(classes.Navbar, {}, [])}>
+        <HStack className={classNames(classes.Navbar, {}, [])}>
             <Dropdown
                 direction='bottom'
                 customOpen={customOpen}
@@ -56,6 +59,7 @@ export const Navbar = () => {
                 trigger={trigger}
                 onTriggerClick={()=> setCustomOpen(prev => !prev)}
             />
-        </nav>
+            <h1 className={classes.pageTitle}>{pageTitle}</h1>
+        </HStack>
     )
 }
