@@ -1,11 +1,13 @@
+import {useLocation} from "react-router-dom";
+import {useMemo, useState} from "react";
+
+import {classNames} from "../../../shared/helpers/classNames";
+import classes from "./Navbar.module.scss";
+
 import {Dropdown} from "../../../shared/UI/Dropdown/Dropdown";
 import {Icon} from "../../../shared/UI/Icon/Icon";
 import {getSideBarItems} from "../../SideBar/model/selectors/getSideBarItem";
-import {useMemo, useState} from "react";
 import {SideBarItem} from "../../SideBar/SideBarItem";
-import {classNames} from "../../../shared/helpers/classNames";
-import classes from "./Navbar.module.scss";
-import {useLocation, useParams} from "react-router-dom";
 import {AppRouterByPathPattern} from "../../../shared/consts/router";
 import {HStack} from "../../../shared/UI/Stack";
 

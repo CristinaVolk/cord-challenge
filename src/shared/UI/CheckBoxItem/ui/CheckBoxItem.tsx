@@ -5,9 +5,9 @@ import classes from "./CheckBoxItem.module.scss";
 import {HStack} from "../../Stack";
 
 interface CheckBoxItemProps {
+    name: string
     checked: boolean
     onChange: () => void
-    name: string
     checkedMode: boolean
 }
 

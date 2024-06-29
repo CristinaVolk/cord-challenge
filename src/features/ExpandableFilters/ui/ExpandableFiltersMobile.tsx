@@ -19,7 +19,7 @@ export const ExpandableFiltersMobile = () => {
             onTriggerClick={()=> setOpen(prev => !prev)}
             items={filterItems}
             trigger={trigger}
-            direction={'bottom'}
+            direction='bottom'
         />
     )
 }

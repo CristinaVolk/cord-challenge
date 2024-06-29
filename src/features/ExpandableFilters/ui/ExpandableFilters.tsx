@@ -12,11 +12,13 @@ import {
     getExpandableFiltersError,
     getExpandableFiltersLoading,
 } from "../model/selectors/getExpandableFilters";
+import {Error} from "../../../shared/UI/Error/ui/Error";
 
 
 export const ExpandableFilters = () => {
     const isLoading = useSelector(getExpandableFiltersLoading)
     const dispatch = useAppDispatch()
+    const error = useSelector(getExpandableFiltersError)
 
     useEffect(()=> {
         // @ts-ignore
@@ -27,6 +29,10 @@ export const ExpandableFilters = () => {
 
     if (isLoading) {
         return <h1>Loading ...</h1>
+    }
+
+    if (error) {
+        return <Error message={error} />
     }
 
     return (

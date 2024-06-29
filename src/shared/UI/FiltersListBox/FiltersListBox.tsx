@@ -1,7 +1,8 @@
-import {useState} from "react";
 import {classNames} from "../../helpers/classNames";
 import classes from "./FiltersListBox.module.scss";
+
 import {VStack} from "../Stack";
+import {useState} from "react";
 
 interface FiltersListBoxProps {
     listBoxTitle: string
@@ -10,14 +11,11 @@ interface FiltersListBoxProps {
 
 export const FiltersListBox = (props: FiltersListBoxProps) => {
     const {listBoxTitle, listBoxItems} = props
-    const [isOpen, setIsOpen] = useState(false);
-    const onListboxButtonClick = () => {
-        setIsOpen(prev => !prev)
-    }
+    const [isOpen, setOpen] = useState(false)
 
     return (
-        <section className={classNames(classes.FiltersListBox, {}, [])}>
-            <button className={classes.trigger} onClick={onListboxButtonClick}>
+        <section className={classNames(classes.FiltersListBox, {[classes.open]:isOpen}, [])}>
+            <button className={classes.trigger} onClick={() => setOpen(prev => !prev)}>
                 <h4 className={
                     classNames(classes.title, {
                         [classes.collapsed]: isOpen
@@ -34,15 +32,7 @@ export const FiltersListBox = (props: FiltersListBoxProps) => {
                     }
                 >
                     {listBoxItems.map((content: JSX.Element, index: number) => (
-                        <li
-                            className={
-                                classNames(classes.item, {
-                                    [classes.open]: isOpen
-                                }, [])
-                            }
-                            key={index}
-                            value={index}
-                        >
+                        <li key={index} value={index}>
                             {content}
                         </li>
                     ))}

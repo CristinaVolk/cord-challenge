@@ -1,12 +1,15 @@
+import {useMemo, useState} from "react";
+import {Link} from "react-router-dom";
+
 import {classNames} from "../../shared/helpers/classNames";
 import classes from "./SideBar.module.scss";
-import {useMemo, useState} from "react";
+
 import {SideBarItem} from "./SideBarItem";
 import {getSideBarItems} from "./model/selectors/getSideBarItem";
 import {Dropdown} from "../../shared/UI/Dropdown/Dropdown";
 import {Icon} from "../../shared/UI/Icon/Icon";
 import {HStack} from "../../shared/UI/Stack";
-import {Link} from "react-router-dom";
+import {getRouteHome} from "../../shared/consts/router";
 
 interface SideBarProps {
     className?: string | undefined
@@ -57,7 +60,7 @@ export function SideBar(props: SideBarProps) {
                             justify='between'
                             className={classes.trigger}
                         >
-                            <Link to={'/'}><h1>Wesley</h1></Link>
+                            <Link to={getRouteHome()}><h1>Wesley</h1></Link>
                             <Icon
                                 width={24}
                                 height={16}
@@ -73,7 +76,7 @@ export function SideBar(props: SideBarProps) {
                         </HStack>
                     }
                     items={itemsList}
-                    direction={"bottom"}
+                    direction="bottom"
                     customOpen={customOpen}
                     onTriggerClick={onToggle}
                 />

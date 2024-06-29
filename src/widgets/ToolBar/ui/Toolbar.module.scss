@@ -1,10 +1,10 @@
+@import "src/app/styles/mixins/flexbox";
+
 .Toolbar {
-  display: flex;
-  flex-direction: column;
+  @include flexbox($direction: column);
 
   &.mobile {
-    flex-direction: row;
-    align-items: flex-end;
+    @include flexbox($direction: row, $alignItems: flex-end);
     margin-bottom: 25px;
   }
 }

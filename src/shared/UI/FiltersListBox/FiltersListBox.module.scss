@@ -1,4 +1,12 @@
 .FiltersListBox {
+  width: 100%;
+
+  &.open {
+    overflow-y: scroll;
+    height: fit-content;
+    max-height: 250px;
+  }
+
   .trigger {
     border: none;
     background: transparent;

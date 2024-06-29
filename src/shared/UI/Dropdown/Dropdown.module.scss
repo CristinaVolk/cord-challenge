@@ -19,7 +19,7 @@
         }
     }
 
-    .menu_nav_link {
+    .menuNavLink {
         width: 100%;
         border: none;
         background: none;
@@ -28,10 +28,10 @@
         color: var(--lightBackground);
 
         &.active {
-            background: yellow;
+            background: var(--primaryColor);
         }
     }
-    .menu_nav_link:not(:first-child) {
+    .menuNavLink:not(:first-child) {
         padding: 15px 0;
     }
 }

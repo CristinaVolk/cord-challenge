@@ -63,7 +63,7 @@ export const Dropdown = (props: DropdownProps) => {
                             const content = ({ active }: { active: boolean }) => (
                                 <div
                                     className={classNames(
-                                        classes.menu_nav_link,
+                                        classes.menuNavLink,
                                         {[classes.active]: active},
                                         [],
                                     )}
