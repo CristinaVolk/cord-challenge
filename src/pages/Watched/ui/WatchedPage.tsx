@@ -1,7 +1,3 @@
 export const WatchedPage = () => {
-    return (
-        <>
-            <h1>Watched</h1>
-        </>
-    )
+    return <h1>Watched</h1>
 }

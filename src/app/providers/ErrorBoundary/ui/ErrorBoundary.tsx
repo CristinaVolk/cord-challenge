@@ -1,6 +1,6 @@
 import React, { ErrorInfo, ReactNode } from 'react';
 
-import {Error} from "../../../../components/Error/ui/Error";
+import {Error} from "../../../../shared/UI/Error/ui/Error";
 
 interface ErrorBoundaryProps {
     children: ReactNode;

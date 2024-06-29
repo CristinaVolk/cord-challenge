@@ -1,14 +1,32 @@
 import axios from 'axios';
+import {MAIN_URL, IMAGE_URL, AUTH_TOKEN} from "../../config";
 
-export const $api = axios.create({
-    baseURL: 'https://api.themoviedb.org/3',
+const $mainApi = axios.create({
+    baseURL: MAIN_URL,
 });
 
-$api.interceptors.request.use((config) => {
-    if (config.headers) {
-        config.headers.Authorization =
-            'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZmIzZmZhMmU1MmJkNDE0MDY4ODhkMzY0MTQ4YjU1NiIsIm5iZiI6MTcxOTI0ODIwMC44Nzk3NjksInN1YiI6IjY2NzlhNGIwYTk2YmNiZjYyYmI4NTc3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i5qhec65CpSG2Cw3fXqcgS17Mv1BzREO5RVjOKuoEuE';
-        config.headers.setAccept('application/json')
-    }
-    return config;
+const $imageApi = axios.create({
+    baseURL: IMAGE_URL,
 });
+
+const api = {
+    $mainApi,
+    $imageApi
+}
+
+for (const key in api) {
+    api[key as keyof typeof api].interceptors.request.use((config) => {
+        if (config.headers) {
+            config.headers.Authorization =
+                `Bearer ${AUTH_TOKEN}`
+            config.headers.setAccept('application/json')
+        }
+        return config;
+    })
+}
+
+export {
+    $mainApi,
+    $imageApi
+}
+

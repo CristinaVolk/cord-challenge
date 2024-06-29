@@ -1,5 +1,4 @@
-import {MoviesList} from "../../../components/MoviesList/ui/MoviesList";
-
+import {MoviesList} from "../../../entities/MoviesList/ui/MoviesList";
 
 export const DiscoverPage = () => {
     return (
