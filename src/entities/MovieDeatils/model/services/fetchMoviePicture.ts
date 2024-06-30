@@ -1,7 +1,7 @@
 import {AxiosResponse} from "axios";
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
-import {ThunkConfig, ThunkExtraArg} from "../../../../app/providers/StoreProvider/config/StateSchema";
+import {ThunkConfig, ThunkExtraArg} from "../../../../app/providers/StoreProvider";
 
 
 export const fetchMoviePicture = createAsyncThunk<

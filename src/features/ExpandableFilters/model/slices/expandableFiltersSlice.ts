@@ -1,4 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+
 import {ExpandableFiltersSchema} from "../types/ExpandableFiltersSchema";
 import {fetchGenres} from "../services/fetchGenres";
 import {fetchLangs} from "../services/fetchLangs";

@@ -1,7 +1,8 @@
 import {AxiosResponse} from "axios";
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {ThunkConfig, ThunkExtraArg} from "../../../../app/providers/StoreProvider/config/StateSchema";
+
 import {Genre, GetFiltersGenresResponse} from "../types/ExpandableFiltersSchema";
+import {ThunkConfig, ThunkExtraArg} from "../../../../app/providers/StoreProvider";
 import {$getGenres} from "../../../../shared/api/endpoints";
 
 

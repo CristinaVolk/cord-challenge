@@ -1,6 +1,6 @@
 import {Checkbox} from "@headlessui/react";
 import {CheckIcon} from "@heroicons/react/16/solid";
-import {classNames} from "../../../helpers/classNames";
+import {classNames} from "../../../helpers/classNames/classNames";
 import classes from "./CheckBoxItem.module.scss";
 import {HStack} from "../../Stack";
 

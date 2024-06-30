@@ -2,7 +2,7 @@ import React, {Fragment, ReactNode} from 'react';
 import {Menu} from '@headlessui/react';
 import classes from './Dropdown.module.scss';
 import popupClasses from './popup.module.scss';
-import {classNames} from "../../helpers/classNames";
+import {classNames} from "../../helpers/classNames/classNames";
 
 type DropdownDirection =
     | 'top'

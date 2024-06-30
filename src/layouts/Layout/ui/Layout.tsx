@@ -5,7 +5,7 @@ import {BrowserView, MobileView } from "react-device-detect";
 import {SideBar} from "../../../widgets/SideBar";
 import {Toolbar} from "../../../widgets/ToolBar";
 import {Navbar} from "../../../widgets/Navbar";
-import { classNames } from '../../../shared/helpers/classNames';
+import { classNames } from '../../../shared/helpers/classNames/classNames';
 
 import classes from './Layout.module.scss'
 

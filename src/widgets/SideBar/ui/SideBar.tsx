@@ -5,7 +5,7 @@ import {SideBarItem} from "./SideBarItem";
 
 import {getSideBarItems} from "../model/selectors/getSideBarItem";
 
-import {classNames} from "../../../shared/helpers/classNames";
+import {classNames} from "../../../shared/helpers/classNames/classNames";
 import {Dropdown} from "../../../shared/UI/Dropdown/Dropdown";
 import {Icon} from "../../../shared/UI/Icon/Icon";
 import {HStack} from "../../../shared/UI/Stack";

@@ -1,9 +1,4 @@
-export enum AppRoutes {
-    HOME = 'Home',
-    DISCOVER = 'Discover',
-    WATCHED = 'Watched',
-    SAVED = 'Saved'
-}
+import {AppRoutes} from "../types/router";
 
 export const getRouteHome = () => '/';
 export const getRouteDiscover = () => '/discover';

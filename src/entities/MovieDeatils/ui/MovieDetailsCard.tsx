@@ -19,7 +19,6 @@ import {
 } from "../model/selectors/getMovieDetailsSelector";
 
 
-
 interface MovieDetailsCardProps {
     movie: MovieDetails
 }

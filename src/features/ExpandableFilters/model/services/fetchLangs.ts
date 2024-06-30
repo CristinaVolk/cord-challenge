@@ -1,7 +1,8 @@
 import {AxiosResponse} from "axios";
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {ThunkConfig, ThunkExtraArg} from "../../../../app/providers/StoreProvider/config/StateSchema";
+
 import {Language} from "../types/ExpandableFiltersSchema";
+import {ThunkConfig, ThunkExtraArg} from "../../../../app/providers/StoreProvider";
 import {$getLanguages} from "../../../../shared/api/endpoints";
 
 

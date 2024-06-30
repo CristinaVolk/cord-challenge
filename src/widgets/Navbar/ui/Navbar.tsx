@@ -1,7 +1,7 @@
 import {useLocation} from "react-router-dom";
 import {useMemo, useState} from "react";
 
-import {classNames} from "../../../shared/helpers/classNames";
+import {classNames} from "../../../shared/helpers/classNames/classNames";
 import {AppRouterByPathPattern} from "../../../shared/consts/router";
 import {HStack} from "../../../shared/UI/Stack";
 import {Dropdown} from "../../../shared/UI/Dropdown/Dropdown";

@@ -34,7 +34,7 @@ export const MoviesList = () => {
         dispatch(fetchMovies())
     }, [dispatch]);
 
-    const debouncedFetch = useDebounce(fetchData, 2000)
+    const debouncedFetch = useDebounce(fetchData, 1000)
 
     useEffect(() => {
         // @ts-ignore
@@ -76,7 +76,7 @@ export const MoviesList = () => {
         return <h1>Loading ...</h1>
     }
 
-    if (movies.length) {
+    if (content) {
         return (
             <VStack gap='15'>
                 {content}

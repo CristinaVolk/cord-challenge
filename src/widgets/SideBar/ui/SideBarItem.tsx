@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 import {Icon} from "../../../shared/UI/Icon/Icon";
-import {classNames} from "../../../shared/helpers/classNames";
+import {classNames} from "../../../shared/helpers/classNames/classNames";
 
 import {SideBarItemType} from "../model/selectors/getSideBarItem";
 

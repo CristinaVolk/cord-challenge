@@ -1,17 +1,19 @@
 import {useSelector} from "react-redux";
+
 import {
-    getExpandableFiltersError,
     getExpandableFiltersGenres,
     getExpandableFiltersLangs,
     getExpandableFiltersSelected
 } from "../selectors/getExpandableFilters";
-import {useAppDispatch} from "../../../../shared/hooks/useAppDispatch/useAppDispatch";
 import {expandableFiltersActions} from "../slices/expandableFiltersSlice";
-import {CheckBoxItem} from "../../../../shared/UI/CheckBoxItem/ui/CheckBoxItem";
 import {languagesAvailable} from "../consts/filters";
+
+import {useAppDispatch} from "../../../../shared/hooks/useAppDispatch/useAppDispatch";
+import {CheckBoxItem} from "../../../../shared/UI/CheckBoxItem/ui/CheckBoxItem";
 import {VStack} from "../../../../shared/UI/Stack";
-import classes from "../../ui/ExpandableFilters.module.scss";
 import {FiltersListBox} from "../../../../shared/UI/FiltersListBox/FiltersListBox";
+
+import classes from "../../ui/ExpandableFilters.module.scss";
 
 export const useExpandableFilters = () => {
     const genresFilters = useSelector(getExpandableFiltersGenres);

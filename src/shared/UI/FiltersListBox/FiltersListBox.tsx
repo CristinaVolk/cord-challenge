@@ -1,4 +1,4 @@
-import {classNames} from "../../helpers/classNames";
+import {classNames} from "../../helpers/classNames/classNames";
 import classes from "./FiltersListBox.module.scss";
 
 import {VStack} from "../Stack";
