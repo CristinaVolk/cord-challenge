@@ -1,4 +1,5 @@
-import {AppRoutes, getRouteDiscover, getRouteSaved, getRouteWatched} from "../../../../shared/consts/router";
+import {getRouteDiscover, getRouteSaved, getRouteWatched} from "../../../../shared/consts/router";
+import {AppRoutes} from "../../../../shared/types/router";
 
 export type SideBarItemType = {
     label: string,
