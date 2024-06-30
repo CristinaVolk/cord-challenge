@@ -12,7 +12,7 @@ import { $mainApi, $imageApi } from '../../../../shared/api/api';
 
 
 export function createReduxStore(
-    initialState?: StateSchema,
+    initialState?: DeepPartial<StateSchema> | undefined,
 ) {
     const rootReducer: ReducersMapObject<StateSchema> = {
         movies: moviesListReducer,
