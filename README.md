@@ -2,7 +2,7 @@
 
 This project was initialized via create-react-app and using several concepts from Feature-Sliced Design such as:
 To read more about [FSD](https://feature-sliced.design/)
-- Structure: app -> layouts -> widgets -> features -> entities -> shared
+- Structure: `app -> layouts -> widgets -> features -> entities -> shared`
 
 - Public api
 - High cohesion, Low coupling
@@ -14,6 +14,8 @@ This project uses own UI kit along with the headless UI lib. (According to the f
 In the project directory, you can run:
 
 ### `npm start`
+
+If there any difficulties while installing packages, please use the npm command with the flags  `--legacy-peer-deps or --force` 
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
