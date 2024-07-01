@@ -5,27 +5,9 @@ import {
     getMoviesListMovies,
     getMoviesListSearch, getMoviesListYear
 } from "./getMoviesListSelector";
+import {mockedMovies, mockedSearchTerm, mockedYearTerm, mockError} from "../../../../shared/helpers/tests/mockedData";
 
-const mockedMovies = [
-    {
-        adult: true,
-        backdrop_path: 'xxx',
-        genre_ids: [1,2,3],
-        id: 1111,
-        original_language: 'en',
-        original_title: 'Bad Teacher',
-        overview: 'string',
-        popularity: 1,
-        poster_path: 'string',
-        release_date: '01-01-2019',
-        title: 'Bad Teacher',
-        video: false,
-        vote_average: 2,
-        vote_count: 2,
-    }
-]
-const mockedSearchTerm = 'ba'
-const mockedYearTerm = '2020'
+
 
 describe('getMovieListSelector Loading', ()=> {
     test('with loading', () => {
@@ -59,14 +41,13 @@ describe('getMovieListSelector Loading', ()=> {
 
 describe('getMovieListSelector Error ', ()=> {
     test('with error', () => {
-        const textError = 'Error occurred'
         const state: DeepPartial<StateSchema> = {
             movies: {
-                error: textError
+                error: mockError
             }
         }
 
-        expect(getMoviesListError(state as StateSchema)).toEqual(textError)
+        expect(getMoviesListError(state as StateSchema)).toEqual(mockError)
     })
 
     test('with no error', () => {

@@ -1,5 +1,6 @@
 import {StateSchema} from "../../../../app/providers/StoreProvider";
 import {getMoviesDetailsError, getMoviesDetailsLoading, getMoviesDetailsPicture} from "./getMovieDetailsSelector";
+import {mockError} from "../../../../shared/helpers/tests/mockedData";
 
 describe('getMoviesDetailsIsLoading.test', ()=> {
     test('with loading', () => {
@@ -33,14 +34,13 @@ describe('getMoviesDetailsIsLoading.test', ()=> {
 
 describe('getMoviesDetailsError.test', ()=> {
     test('with error', () => {
-        const textError = 'Error occurred'
         const state: DeepPartial<StateSchema> = {
             movieDetails: {
-                error: textError
+                error: mockError
             }
         }
 
-        expect(getMoviesDetailsError(state as StateSchema)).toEqual(textError)
+        expect(getMoviesDetailsError(state as StateSchema)).toEqual(mockError)
     })
 
     test('with no error', () => {
@@ -60,7 +60,7 @@ describe('getMoviesDetailsError.test', ()=> {
     })
 })
 
-describe('getMoviesDetailsPicture.test', ()=> {
+describe('getMoviesDetailsPicture.test', () => {
     test('with value', () => {
         const path = 'xxx/xxx'
         const state: DeepPartial<StateSchema> = {
