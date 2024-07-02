@@ -1,3 +1,14 @@
+@import "../../../app/styles/mixins/animation";
+
+@include keyframes(fade) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .FiltersListBox {
   width: 100%;
 
@@ -32,13 +43,10 @@
 
     .list {
       &.open {
-        animation: fade-in 600ms linear;
+        @include animation('fade 600ms linear');
       }
     }
 }
 
-@keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+
 
