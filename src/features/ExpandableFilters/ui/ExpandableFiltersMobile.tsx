@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, {useState} from "react";
 
 import {Dropdown} from "../../../shared/UI/Dropdown/Dropdown";
 import {useExpandableFilters} from "../model/hooks/useExpandableFilters";

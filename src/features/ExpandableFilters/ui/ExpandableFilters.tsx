@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {BrowserView, MobileView} from "react-device-detect";
 import {useSelector} from "react-redux";
 

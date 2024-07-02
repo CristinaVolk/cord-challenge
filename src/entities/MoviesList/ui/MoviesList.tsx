@@ -39,7 +39,7 @@ export const MoviesList = () => {
     useEffect(() => {
         // @ts-ignore
         debouncedFetch()
-    }, [dispatch, searchTerm, year, selectedFilters])
+    }, [debouncedFetch, searchTerm, year, selectedFilters])
 
 
     function filterBy(moviesArray: Array<MovieDetails>, category: string) {

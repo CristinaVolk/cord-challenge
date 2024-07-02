@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {classNames} from "../../helpers/classNames/classNames";
 import classes from "./FiltersListBox.module.scss";
 

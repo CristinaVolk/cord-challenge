@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {Checkbox} from "@headlessui/react";
 import {CheckIcon} from "@heroicons/react/16/solid";
 import {classNames} from "../../../helpers/classNames/classNames";

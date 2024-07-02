@@ -1,4 +1,4 @@
-import {Fragment, useEffect} from "react";
+import React, {Fragment, useEffect} from "react";
 import {useSelector} from "react-redux";
 import {BrowserView, MobileView} from "react-device-detect";
 
@@ -10,6 +10,7 @@ import classes from "./MovieDetails.module.scss";
 import {getExpandableFiltersGenres} from "../../../features/ExpandableFilters";
 
 import {HStack, VStack} from "../../../shared/UI/Stack";
+import {Icon} from "../../../shared/UI/Icon/Icon"
 import {useAppDispatch} from "../../../shared/hooks/useAppDispatch/useAppDispatch";
 
 import {
@@ -42,7 +43,7 @@ export const MovieDetailsCard = (props: MovieDetailsCardProps) => {
     useEffect(()=> {
         // @ts-ignore
         dispatch(fetchMoviePicture(poster_path))
-    }, [dispatch])
+    }, [dispatch, poster_path])
 
     return (
         <>
@@ -51,7 +52,9 @@ export const MovieDetailsCard = (props: MovieDetailsCardProps) => {
 
                     {isLoading && <p>Loading ...</p>}
                     {error && <p>{error}</p>}
-                    {picturePath && <img src={picturePath} alt="movie picture"/>}
+                    {picturePath &&
+                        <img src={picturePath} alt="movie picture" />
+                    }
 
                     <VStack gap='20'>
                         <h2 className={classes.title}>{title}</h2>
