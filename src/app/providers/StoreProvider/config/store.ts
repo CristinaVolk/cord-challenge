@@ -7,7 +7,9 @@ import {
 
 import {moviesListReducer} from "../../../../entities/MoviesList";
 import {movieDetailsReducer} from "../../../../entities/MovieDeatils";
+
 import {expandableFiltersReducer} from "../../../../features/ExpandableFilters";
+
 import { $mainApi, $imageApi } from '../../../../shared/api/api';
 
 

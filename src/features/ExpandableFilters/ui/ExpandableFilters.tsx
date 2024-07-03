@@ -4,7 +4,6 @@ import {useSelector} from "react-redux";
 
 import {ExpandableFiltersMobile} from "./ExpandableFiltersMobile";
 import {ExpandableFiltersBrowser} from "./ExpandableFiltersBrowser";
-import {useAppDispatch} from "../../../shared/hooks/useAppDispatch/useAppDispatch";
 
 import {fetchGenres} from "../model/services/fetchGenres";
 import {fetchLangs} from "../model/services/fetchLangs";
@@ -12,7 +11,9 @@ import {
     getExpandableFiltersError,
     getExpandableFiltersLoading,
 } from "../model/selectors/getExpandableFilters";
+
 import {Error} from "../../../shared/UI/Error/ui/Error";
+import {useAppDispatch} from "../../../shared/hooks/useAppDispatch/useAppDispatch";
 
 
 export const ExpandableFilters = () => {

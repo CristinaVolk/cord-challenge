@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from "react";
 
 import {classNames} from "../../helpers/classNames/classNames";
 import classes from "./FiltersListBox.module.scss";
 
 import {VStack} from "../Stack";
-import {useState} from "react";
+
 
 interface FiltersListBoxProps {
     listBoxTitle: string

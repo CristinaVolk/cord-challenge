@@ -8,13 +8,13 @@ import {HStack, VStack} from "../../../shared/UI/Stack";
 import {getRouteDiscover} from "../../../shared/consts/router";
 import {useIsOnPage} from "../../../shared/hooks/useIsOnPage/useIsOnPage";
 
-import classes from "./SearchNavbar.module.scss";
-
 import {moviesListActions} from "../../../entities/MoviesList";
 import {
     getMoviesListSearch,
     getMoviesListYear
 } from "../../../entities/MoviesList";
+
+import classes from "./SearchNavbar.module.scss";
 
 
 export const SearchNavbar = () => {

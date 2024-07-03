@@ -2,9 +2,11 @@ import React from 'react';
 
 import {VStack} from "../../../shared/UI/Stack";
 import {FiltersListBox} from "../../../shared/UI/FiltersListBox/FiltersListBox";
+
 import {useExpandableFilters} from "../model/hooks/useExpandableFilters";
 
 import classes from "./ExpandableFilters.module.scss";
+
 
 export const ExpandableFiltersBrowser = () => {
     const {

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
-import classes from './Error.module.scss';
 import {VStack} from "../../Stack";
+import classes from './Error.module.scss';
 
 interface ErrorProps {
     className?: string;

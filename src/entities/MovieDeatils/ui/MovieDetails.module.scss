@@ -35,6 +35,14 @@
     text-overflow: ellipsis;
     font-weight: 600;
   }
+
+  .vote {
+    padding: 4px 6px;
+    font-weight: 600;
+    color: white;
+    background: var(--primaryColor);
+    border-radius: 4px;
+  }
 }
 
 .MovieDetailsMobile {

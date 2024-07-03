@@ -1,7 +1,6 @@
 import React, { FunctionComponent, ImgHTMLAttributes } from 'react';
 
-interface ImgProps extends ImgHTMLAttributes<HTMLImageElement>{
-}
+interface ImgProps extends ImgHTMLAttributes<HTMLImageElement>{}
 
 type SlideProps = Pick<ImgProps, "src" | "alt" | "onClick" | "className" | "width" | "height">;
 

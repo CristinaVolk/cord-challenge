@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import {MAIN_URL, IMAGE_URL, AUTH_TOKEN} from "../../config";
 
 const $mainApi = axios.create({

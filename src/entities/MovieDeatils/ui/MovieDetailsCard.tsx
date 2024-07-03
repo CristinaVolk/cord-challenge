@@ -4,20 +4,19 @@ import {BrowserView, MobileView} from "react-device-detect";
 
 import {MovieDetails} from "../model/types/MovieDetails";
 import {fetchMoviePicture} from "../model/services/fetchMoviePicture";
-
-import classes from "./MovieDetails.module.scss";
-
-import {getExpandableFiltersGenres} from "../../../features/ExpandableFilters";
-
-import {HStack, VStack} from "../../../shared/UI/Stack";
-import {Icon} from "../../../shared/UI/Icon/Icon"
-import {useAppDispatch} from "../../../shared/hooks/useAppDispatch/useAppDispatch";
-
 import {
     getMoviesDetailsError,
     getMoviesDetailsLoading,
     getMoviesDetailsPicture
 } from "../model/selectors/getMovieDetailsSelector";
+
+import {getExpandableFiltersGenres} from "../../../features/ExpandableFilters";
+
+import {HStack, VStack} from "../../../shared/UI/Stack";
+import {useAppDispatch} from "../../../shared/hooks/useAppDispatch/useAppDispatch";
+import {roundNumber} from "../../../shared/helpers/roundNumber";
+
+import classes from "./MovieDetails.module.scss";
 
 
 interface MovieDetailsCardProps {
@@ -31,6 +30,7 @@ export const MovieDetailsCard = (props: MovieDetailsCardProps) => {
         title,
         overview,
         release_date,
+        vote_average,
     } = movie
 
     const error = useSelector(getMoviesDetailsError)
@@ -66,6 +66,8 @@ export const MovieDetailsCard = (props: MovieDetailsCardProps) => {
                         <span className={classes.overview}>{overview}</span>
                         <span>{release_date}</span>
                     </VStack>
+
+                    <div className={classes.vote}>{roundNumber(vote_average)}</div>
                 </HStack>
             </BrowserView>
 
